@@ -1,12 +1,17 @@
-public class EmailNotification implements Notification {
+package product.email;
+
+import model.User;
+import product.Notification;
+
+public class FirebaseEmailNotification extends Notification {
 
     @Override
     public void send(User user, String title, String message) {
         // Send email
         // ... code to send email
-        System.out.println("Email sent to " + user.getEmail());
+        this.user = user;
+        System.out.println("Firebase Email sent to " + user.getEmail());
         System.out.println("Subject: " + title);
         System.out.println("Body: " + message);
     }
-
 }
